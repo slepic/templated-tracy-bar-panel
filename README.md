@@ -5,8 +5,9 @@
 A simple implementation of Tracy\IBarPanel that allows you to create custom panels by composition of two templates (for tab and panel respectively) and a data provider which feeds the templates with specific data.
 
 The advantage of using [```TemplatedBarPanel```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplatedBarPanel.php) instead of implementing the IBarPanel interface directly are:
-1. You abstract your implementation from a specific templating engine. Once you find a better/faster templating engine you can switch to it by just reimplementing the templates and not the way the data for them are gathered.
-2. You allow your panels to change their look without having to modify them. You just pass different templates to them.
+1. Implement just the [```TemplateDataProviderInterface```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplateDataProviderInterface.php) and use your favourite templating engine for tab and panel templates.
+2. You abstract your implementation from a specific templating engine. Once you find a better/faster templating engine you can switch to it by just reimplementing the templates and not the way the data for them are gathered.
+3. You allow your panels to change their look without having to modify them. You just pass different templates to them.
 
 ## Requirements
 
@@ -41,7 +42,7 @@ class Factory
 }
 ```
 
-You need to implement the [```TemplateDataProviderInterface```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplateDataProviderInterface.php) to provide specific data for your templates.
+You need to implement the ```TemplateDataProviderInterface``` to provide specific data for your templates.
 
 The two templates can be the OutputBufferTemplate provided by the slepic/php-template package.
 
