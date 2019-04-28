@@ -1,7 +1,10 @@
+[![Build Status](https://travis-ci.org/slepic/templated-tracy-bar-panel.svg?branch=master)](https://travis-ci.org/slepic/templated-tracy-bar-panel)
+[![Style Status](https://styleci.io/repos/183887116/shield)](https://styleci.io/repos/183887116)
+
 # templated-tracy-bar-panel
 A simple implementation of Tracy\IBarPanel that allows you to create custom panels by composition of two templates (for tab and panel respectively) and a data provider which feeds the templates with specific data.
 
-The advantage of using this generic implementation of IBarPanel instead of implementing the interface directly are:
+The advantage of using [```TemplatedBarPanel```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplatedBarPanel.php) instead of implementing the IBarPanel interface directly are:
 1. You abstract your implementation from a specific templating engine. Once you find a better/faster templating engine you can switch to it by just reimplementing the templates and not the way the data for them are gathered.
 2. You allow your panels to change their look without having to modify them. You just pass different templates to them.
 
@@ -18,7 +21,7 @@ Install with composer
 
 ## Usage
 
-When implementing a IBarPanel for Tracy, instead of implementing the interface directly, create just a factory class, which will do something like this:
+When implementing a IBarPanel for Tracy, instead of implementing the interface directly, create just a factory class, which will instantiate the ```TemplatedBarPanel``` like this:
 
 ```
 class Factory
@@ -38,7 +41,7 @@ class Factory
 }
 ```
 
-You need to implement the TemplateDataProviderInterface to provide specific data for your templates.
+You need to implement the [```TemplateDataProviderInterface```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplateDataProviderInterface.php) to provide specific data for your templates.
 
 The two templates can be the OutputBufferTemplate provided by the slepic/php-template package.
 
