@@ -19,6 +19,9 @@
             "email": "gslepic@gmail.com"
         }
     ],
+    "provide": {
+        "slepic/php-template-consumer": "*"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
