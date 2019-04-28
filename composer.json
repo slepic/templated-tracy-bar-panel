@@ -1,0 +1,63 @@
+{
+    "name": "slepic/templated-tracy-bar-panel",
+    "description": "Generic implementaton of Tracy\\IBarPanel which allows you to implement IBarPanel factory classes instead of implementing IBarPanel directly.",
+    "type": "library",
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "tracy/tracy": "^2.2",
+        "slepic/php-template": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slepic\\Tracy\\Bar\\TemplatedBarPanel\\": "src"
+        }
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "slepic",
+            "email": "gslepic@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "friendsofphp/php-cs-fixer": "^2.14"
+    },
+    "scripts": {
+        "check-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --ansi --config php-cs-fixer/config.php src",
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --ansi --config php-cs-fixer/config.php tests"
+        ],
+        "check-staged-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --ansi --config php-cs-fixer/config.php"
+        ],
+        "diff-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --diff --ansi --config php-cs-fixer/config.php src",
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --diff --ansi --config php-cs-fixer/config.php tests"
+        ],
+        "diff-staged-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --dry-run --diff --ansi --config php-cs-fixer/config.php"
+        ],
+        "fix-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --ansi --config php-cs-fixer/config.php src",
+            "vendor/bin/php-cs-fixer fix -vvv --ansi --config php-cs-fixer/config.php tests"
+        ],
+        "fix-json": [
+            "mv composer.json composer.json.bck",
+            "cat composer.json.bck | python -mjson.tool > composer.json",
+            "diff composer.json.bck composer.json -u && rm composer.json.bck"
+        ],
+        "fix-staged-cs": [
+            "vendor/bin/php-cs-fixer fix -vvv --ansi --config php-cs-fixer/config.php"
+        ],
+        "pre-commit": [
+            "composer check-staged-cs",
+            "composer test"
+        ],
+        "test": [
+            "vendor/bin/phpunit --colors=always"
+        ]
+    }
+}
