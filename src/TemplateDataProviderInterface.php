@@ -11,12 +11,12 @@ namespace Slepic\Tracy\Bar\TemplatedBarPanel;
 interface TemplateDataProviderInterface
 {
     /**
-     * @return mixed
+     * @return array
      */
     public function getTabData();
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getPanelData();
 }

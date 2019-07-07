@@ -46,4 +46,12 @@ You need to implement the ```TemplateDataProviderInterface``` to provide specifi
 
 The two templates can be the [```OutputBufferTemplate```](https://github.com/slepic/php-template/blob/master/src/OutputBufferTemplate.php) provided by the [slepic/php-template](https://packagist.org/packages/slepic/php-template) package.
 
-But if you prefer a higher level template engine, see [slepic/php-template-implementation](https://packagist.org/providers/slepic/php-template-implementation) to see if there is an existing binding for your favourite templating engine. 
+But if you prefer a higher level template engine, see [slepic/php-template-implementation](https://packagist.org/providers/slepic/php-template-implementation) to see if there is an existing binding for your favourite templating engine.
+
+## Changelog
+
+### 0.2.0
+
+* Update dependency slepic/php-template to v0.2.
+* Changed return type of ```TemplateDataProviderInterface::getTabData()`` and ```TemplateDataProviderInterface::getPanelData()``` to array.
+* Changed travis setup to only run tests in oldest and newest php versions supported by this package (that is 5.6 and 7.3).
