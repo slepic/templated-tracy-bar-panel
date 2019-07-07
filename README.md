@@ -2,7 +2,7 @@
 [![Style Status](https://styleci.io/repos/183887116/shield)](https://styleci.io/repos/183887116)
 
 # templated-tracy-bar-panel
-A simple implementation of Tracy\IBarPanel that allows you to create custom panels by composition of two templates (for tab and panel respectively) and a data provider which feeds the templates with specific data.
+A simple implementation of [```Tracy\IBarPanel```](https://github.com/nette/tracy/blob/master/src/Tracy/Bar/IBarPanel.php) that allows you to create custom panels by composition of two templates (for tab and panel respectively) and a data provider which feeds the templates with specific data.
 
 The advantage of using [```TemplatedBarPanel```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplatedBarPanel.php) instead of implementing the IBarPanel interface directly are:
 1. Implement just the [```TemplateDataProviderInterface```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplateDataProviderInterface.php) and use your favourite templating engine for tab and panel templates.
@@ -22,7 +22,7 @@ Install with composer
 
 ## Usage
 
-When implementing a IBarPanel for Tracy, instead of implementing the interface directly, create just a factory class, which will instantiate the ```TemplatedBarPanel``` like this:
+When implementing a [```IBarPanel```](https://github.com/nette/tracy/blob/master/src/Tracy/Bar/IBarPanel.php) for Tracy, instead of implementing the interface directly, create just a factory class, which will instantiate the [```TemplatedBarPanel```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplatedBarPanel.php) like this:
 
 ```
 class Factory
@@ -42,7 +42,7 @@ class Factory
 }
 ```
 
-You need to implement the ```TemplateDataProviderInterface``` to provide specific data for your templates.
+You need to implement the [```TemplateDataProviderInterface```](https://github.com/slepic/templated-tracy-bar-panel/blob/master/src/TemplateDataProviderInterface.php) to provide specific data for your templates.
 
 The two templates can be the [```OutputBufferTemplate```](https://github.com/slepic/php-template/blob/master/src/OutputBufferTemplate.php) provided by the [slepic/php-template](https://packagist.org/packages/slepic/php-template) package.
 
@@ -53,5 +53,5 @@ But if you prefer a higher level template engine, see [slepic/php-template-imple
 ### 0.2.0
 
 * Update dependency slepic/php-template to v0.2.
-* Changed return type of ```TemplateDataProviderInterface::getTabData()`` and ```TemplateDataProviderInterface::getPanelData()``` to array.
+* Changed return type of ```TemplateDataProviderInterface::getTabData()``` and ```TemplateDataProviderInterface::getPanelData()``` to array.
 * Changed travis setup to only run tests in oldest and newest php versions supported by this package (that is 5.6 and 7.3).
