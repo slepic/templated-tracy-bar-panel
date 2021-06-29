@@ -3,9 +3,9 @@
     "description": "Generic implementaton of Tracy\\IBarPanel which allows you to implement IBarPanel factory classes instead of implementing IBarPanel directly.",
     "type": "library",
     "require": {
-        "php": "^5.6 || ^7.0",
+        "php": ">=5.6",
         "tracy/tracy": "^2.2",
-        "slepic/php-template": "^0.2"
+        "slepic/php-template": "^0.2 || ^1.0"
     },
     "autoload": {
         "psr-4": {
